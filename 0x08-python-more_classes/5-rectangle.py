@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""prints rectangle with #"""
+"""calls the __del__() method when an object gets deleted"""
 
 class Rectangle:
     """Rectangle class."""
@@ -10,6 +10,7 @@ class Rectangle:
         width (int): rectangle width
         height (int): rectangle height
         """
+
         self.width = width
         self.height = height
 
@@ -31,12 +32,12 @@ class Rectangle:
                 """Get/set the height of the rectangle."""
                 return self.__height
 
-             @height.setter
-             def height(self, value):
-                 if not isinstance(value, int):
-                     raise TypeError("height must be an integer")
-                 if value < 0:
-                     raise ValueError("height must be >= 0")
+            @height.setter
+            def height(self, value):
+                if not isinstance(value, int):
+                    raise TypeError("height must be an integer")
+                if value < 0:
+                    raise ValueError("height must be >= 0")
                  self.__height = value
 
                  def area(self):
@@ -66,3 +67,9 @@ class Rectangle:
                                  """return string representation of rectangle"""
                                  x = "Rectangle(" + str(self.__width) + ', ' + str(self.__height) + ')'
                                  return x
+
+                             def __del__(self):
+                                 print("Bye rectangle...")
+
+
+
