@@ -1,1 +1,1 @@
-type
+Python __str__
